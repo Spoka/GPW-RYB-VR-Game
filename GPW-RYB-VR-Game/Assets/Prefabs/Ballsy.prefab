@@ -125,5 +125,5 @@ MonoBehaviour:
   destructionTimer: 1.5
   launched: 0
   splitCase: 0
-  splittedPrefab: {fileID: 1415160618866835399, guid: 39b3e64e8a3a7bf4582bded501774f68,
+  splittedPrefab: {fileID: 3885409856796168774, guid: e2b3833847a8781458843955b1effa08,
     type: 3}
