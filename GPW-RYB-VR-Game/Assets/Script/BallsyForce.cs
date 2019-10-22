@@ -16,7 +16,7 @@ public class BallsyForce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     private void OnTriggerStay(Collider other)
@@ -35,6 +35,7 @@ public class BallsyForce : MonoBehaviour
             shoot = false;
         }
     }
+   
 
     // Update is called once per frame
     void Update()
