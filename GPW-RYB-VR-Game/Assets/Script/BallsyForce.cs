@@ -6,26 +6,53 @@ using UnityEditor;
 public class BallsyForce : MonoBehaviour
 {
     Rigidbody rigidBalldy;
-    Splitter splitter;
+    //Splitter splitter;
+    ColorScript colorScript;
     public GameObject ballsyPrefab;
     public GameObject prefabLoc;
-    public float hTravel = 700;
-    public float lTravel = -1500;
+    public float xForceMin = -300;
+    public float xForceMax = 300;
+    public float yForce = 700;
+    public float zForce = -1500;
+    public int colorValue;
     bool shoot;
+    float timer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        timer = 0;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Conveyed")
+        {
+            colorScript = other.gameObject.GetComponent<ColorScript>();
+            colorValue = colorScript.colorValue;
+            Instantiate(ballsyPrefab, prefabLoc.transform.position, ballsyPrefab.transform.rotation);
+            Destroy(other.gameObject);
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "CannonBall")
         {
-            splitter = other.gameObject.GetComponent<Splitter>();
+            //splitter = other.gameObject.GetComponent<Splitter>();
+            colorScript.colorValue = colorValue;
             rigidBalldy = other.attachedRigidbody;
             shoot = true;
+          
+            timer += Time.deltaTime;
+            if (timer >= 0.5f)
+            {
+                //splitter.launched = true;
+                float xForce = Random.Range(xForceMin, xForceMax);
+                rigidBalldy.AddForce(new Vector3(xForce, yForce, zForce));
+                rigidBalldy.useGravity = true;
+                timer = 0;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -35,11 +62,11 @@ public class BallsyForce : MonoBehaviour
             shoot = false;
         }
     }
-   
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && shoot)
         {
             splitter.launched = true;
@@ -50,5 +77,6 @@ public class BallsyForce : MonoBehaviour
         {
             Instantiate(ballsyPrefab, prefabLoc.transform.position, ballsyPrefab.transform.rotation);
         }
+        */
     }
 }

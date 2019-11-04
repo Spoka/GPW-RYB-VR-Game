@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CannonBall
+  - Conveyed
+  - Cannon
+  - Ground
   layers:
   - Default
   - TransparentFX

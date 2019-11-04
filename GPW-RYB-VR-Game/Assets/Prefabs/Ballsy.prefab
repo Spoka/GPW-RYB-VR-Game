@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2852696312233955437}
   - component: {fileID: 5515760778397068830}
   - component: {fileID: 5515760778397068827}
-  - component: {fileID: -58852752897555088}
+  - component: {fileID: -2815171856808682023}
   m_Layer: 0
   m_Name: Ballsy
   m_TagString: CannonBall
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4587485914390308017}
   m_LocalRotation: {x: -0.0043686656, y: -0.61348313, z: -0.7896758, w: 0.005623364}
   m_LocalPosition: {x: 458.23, y: 3.26, z: 220.1}
-  m_LocalScale: {x: 45.84441, y: 63.264763, z: 49.24466}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,7 +110,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.012969896
   m_Center: {x: 0.000000029903614, y: -0.000067259796, z: 0.00083312485}
---- !u!114 &-58852752897555088
+--- !u!114 &-2815171856808682023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +119,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4587485914390308017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dd0c1208e43fb7448d1b30131feaf3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 70f05205a9ba47447aa02e51bbf18daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructionTimer: 1.5
-  launched: 0
-  splitCase: 0
-  splittedPrefab: {fileID: 3885409856796168774, guid: e2b3833847a8781458843955b1effa08,
-    type: 3}

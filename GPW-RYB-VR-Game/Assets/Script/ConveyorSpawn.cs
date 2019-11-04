@@ -20,6 +20,7 @@ public class ConveyorSpawn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+
             Instantiate(spawndCube, spawnPoint.transform.position, Quaternion.identity);
         }
     }

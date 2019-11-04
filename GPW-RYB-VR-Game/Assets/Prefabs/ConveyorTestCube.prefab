@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5502885236205054881}
   - component: {fileID: 5780974072974578718}
   - component: {fileID: 8689781229772048702}
+  - component: {fileID: 5026246436294926585}
   m_Layer: 0
   m_Name: ConveyorTestCube
-  m_TagString: Untagged
+  m_TagString: Conveyed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +110,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5026246436294926585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768231439411791867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751c977cd4efece449623a5c99821b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorValue: 0
