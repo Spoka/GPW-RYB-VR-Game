@@ -19,10 +19,10 @@ public class ColorScript : MonoBehaviour
                 renderer.material.SetColor("_Color", Color.red);
                 break;
             case 2:
-                renderer.material.SetColor("_Color", Color.blue);
+                renderer.material.SetColor("_Color", Color.yellow);
                 break;
             case 3:
-                renderer.material.SetColor("_Color", Color.yellow);
+                renderer.material.SetColor("_Color", Color.blue);
                 break;
         }
     }
