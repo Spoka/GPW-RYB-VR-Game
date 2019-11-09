@@ -19,7 +19,7 @@ public class BallScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 5)
+        if (timer >= 15)
         {
             Destroy(gameObject);
         }

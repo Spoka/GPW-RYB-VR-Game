@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     public int score;
-    Text scoreText;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = gameObject.GetComponent<Text>();
+        //scoreText = gameObject.GetComponent<Text>();
     }
 
     // Update is called once per frame

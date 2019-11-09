@@ -8,6 +8,7 @@ TagManager:
   - Conveyed
   - Cannon
   - Ground
+  - Container
   layers:
   - Default
   - TransparentFX

@@ -16,25 +16,24 @@ public class ContainerScript : MonoBehaviour
 
     private void Start()
     {
-        if (name =="RedContainer")
+        switch (name)
         {
-            thisContainer = redContainer;
-            print(name + thisContainer);
-        }
-        else if (name == "YellowContainer")
-        {
-            thisContainer = yellowContainer;
-            print(name + thisContainer);
-        }
-        else if (name == "BlueContainer")
-        {
-            thisContainer = blueContainer;
-            print(name + thisContainer);
-        }
-        else if (tag == "Ground")
-        {
-            thisContainer = ground;
-            print(name + thisContainer);
+            case "RedContainer":
+                thisContainer = redContainer;
+                print(name + thisContainer);
+                break;
+            case "YellowContainer":
+                thisContainer = yellowContainer;
+                print(name + thisContainer);
+                break;
+            case "BlueContainer":
+                thisContainer = blueContainer;
+                print(name + thisContainer);
+                break;
+            default:
+                thisContainer = ground;
+                print(name + thisContainer);
+                break;
         }
         scoreScript.score = 0;
     }
@@ -44,20 +43,20 @@ public class ContainerScript : MonoBehaviour
         if (other.tag == "CannonBall")
         {
             ballScript = other.gameObject.GetComponent<BallScript>();
-            if (ballScript.colorValue == thisContainer)
+            if (tag == "Ground")
             {
-                scoreScript.score++;
-            }
-            else if (ballScript.colorValue != thisContainer)
-            {
-                if (thisContainer == ground)
+                if (scoreScript.score >= 1)
                 {
-                    if (scoreScript.score >= 1)
-                    {
-                        scoreScript.score--;
-                    }
+                    scoreScript.score--;
                 }
-                else
+            }
+            else if (tag == "Container")
+            {
+                if (ballScript.colorValue == thisContainer)
+                {
+                    scoreScript.score++;
+                }
+                else if (ballScript.colorValue != thisContainer)
                 {
                     if (scoreScript.score == 1)
                     {
@@ -68,6 +67,7 @@ public class ContainerScript : MonoBehaviour
                         scoreScript.score -= 2;
                     }
                 }
+                Destroy(other.gameObject);
             }
         }
     }
