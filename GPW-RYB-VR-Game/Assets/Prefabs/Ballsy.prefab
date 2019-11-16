@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 8406629810718010516}
   - component: {fileID: 2852696312233955437}
   - component: {fileID: 5515760778397068830}
-  - component: {fileID: 5515760778397068827}
   - component: {fileID: -2815171856808682023}
   - component: {fileID: 8602290015914407623}
   - component: {fileID: 5797145912865455853}
   - component: {fileID: -4717887575325242471}
+  - component: {fileID: 374361131070939887}
+  - component: {fileID: 5157076007041624066}
   m_Layer: 0
   m_Name: Ballsy
   m_TagString: CannonBall
@@ -32,8 +33,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4587485914390308017}
   m_LocalRotation: {x: -0.0043686656, y: -0.61348313, z: -0.7896758, w: 0.005623364}
-  m_LocalPosition: {x: 458.23, y: 3.26, z: 220.1}
-  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 458.23, y: 3.2697, z: 220.09}
+  m_LocalScale: {x: 15.27675, y: 15.27675, z: 15.27675}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,19 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!135 &5515760778397068827
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4587485914390308017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.025
-  m_Center: {x: 0.000000029903614, y: -0.000067259796, z: 0.00083312485}
 --- !u!114 &-2815171856808682023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +182,7 @@ MonoBehaviour:
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
-  scaleReleaseVelocity: 1.1
+  scaleReleaseVelocity: 2
   scaleReleaseVelocityThreshold: -1
   scaleReleaseVelocityCurve:
     serializedVersion: 2
@@ -246,3 +234,29 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!135 &374361131070939887
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587485914390308017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.015
+  m_Center: {x: -0.0000018775453, y: -0.00077449327, z: 0.00083312544}
+--- !u!65 &5157076007041624066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587485914390308017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15, z: 0.15}
+  m_Center: {x: 0.00000002980464, y: -0.0007735396, z: 0.00083312544}

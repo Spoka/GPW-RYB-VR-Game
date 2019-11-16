@@ -5,8 +5,9 @@ using UnityEngine;
 public class BallScript : MonoBehaviour
 {
     public int colorValue;
-    BallsyForce ballsyForce;
+    BallsyForce cannonScript;
     float timer;
+    
 
 
     // Start is called before the first frame update
@@ -19,19 +20,41 @@ public class BallScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 15)
+        if (timer >= 10)
         {
             Destroy(gameObject);
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ConveyorBelt")
+        {
+            var renderer = gameObject.GetComponent<Renderer>();
+
+            colorValue = Random.Range(1, 4);
+
+            switch (colorValue)
+            {
+                case 1:
+                    renderer.material.SetColor("_Color", Color.red);
+                    break;
+                case 2:
+                    renderer.material.SetColor("_Color", Color.yellow);
+                    break;
+                case 3:
+                    renderer.material.SetColor("_Color", Color.blue);
+                    break;
+            }
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Cannon")
         {
             var renderer = gameObject.GetComponent<Renderer>();
-            ballsyForce = other.gameObject.GetComponent<BallsyForce>();
-            colorValue = ballsyForce.colorValue;
+            cannonScript = other.gameObject.GetComponent<BallsyForce>();
+            colorValue = cannonScript.colorValue;
 
             switch (colorValue)
             {

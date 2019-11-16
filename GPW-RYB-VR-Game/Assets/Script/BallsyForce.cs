@@ -7,9 +7,9 @@ public class BallsyForce : MonoBehaviour
 {
     Rigidbody rigidBalldy;
     //Splitter splitter;
-    ColorScript colorScript;
-    public GameObject ballsyPrefab;
-    public GameObject prefabLoc;
+    //ColorScript colorScript;
+    //public GameObject ballsyPrefab;
+    //public GameObject prefabLoc;
     public float xForceMin = -300;
     public float xForceMax = 300;
     public float yForce = 700;
@@ -25,22 +25,24 @@ public class BallsyForce : MonoBehaviour
         timer = 0;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Conveyed")
-        {
-            colorScript = other.gameObject.GetComponent<ColorScript>();
-            colorValue = colorScript.colorValue;
-            Instantiate(ballsyPrefab, prefabLoc.transform.position, ballsyPrefab.transform.rotation);
-            Destroy(other.gameObject);
-        }
-    }
+    //THIS NEEDS TO BE MOVED TO ANOTHER SCRIPT
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == "Conveyed")
+    //    {
+    //        colorScript = other.gameObject.GetComponent<ColorScript>();
+    //        colorValue = colorScript.colorValue;
+    //        Instantiate(ballsyPrefab, prefabLoc.transform.position, ballsyPrefab.transform.rotation);
+    //        Destroy(other.gameObject);
+    //    }
+    //}
+    //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "CannonBall")
         {
             //splitter = other.gameObject.GetComponent<Splitter>();
-            colorScript.colorValue = colorValue;
             rigidBalldy = other.attachedRigidbody;
             shoot = true;
           
