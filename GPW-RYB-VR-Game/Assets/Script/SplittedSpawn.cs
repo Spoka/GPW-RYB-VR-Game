@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//THIS CODE IS CURRENTLY NOT BEING USED
+
 public class SplittedSpawn : MonoBehaviour
 {
     int forceDir;

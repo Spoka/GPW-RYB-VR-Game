@@ -24,32 +24,26 @@ public class ConveyorSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentDelay == 0)
-        {
-            Fire();
-        }
-
-        if (fireCube && currentDelay < delay)
-        {
-            currentDelay += 1 * Time.deltaTime;
-        }
-
-        if (currentDelay >= delay)
-        {
-            currentDelay = 0;
-        }
-
-        /*if (Input.GetKeyDown(KeyCode.R))
-        {
-
-            Instantiate(spawndCube, spawnPoint.transform.position, Quaternion.identity);
-        }*/
+        if (currentDelay == 0)                        //
+        {                                             //
+            Fire();                                   //
+        }                                             //
+                                                      //
+        if (fireCube && currentDelay < delay)         //Call Fire(spawn) method after Delay time
+        {                                             //
+            currentDelay += 1 * Time.deltaTime;       //          
+        }                                             //          
+                                                      //          
+        if (currentDelay >= delay)                    //
+        {                                             //
+            currentDelay = 0;                         //
+        }                                             //
     }
 
     void Fire()
     {
-        fireCube = true;
-        cubeFired = Instantiate(spawndCube, spawnPoint.transform.position, Quaternion.identity);
-        cubeFired.transform.rotation = transform.rotation;
+        fireCube = true;                                                                              //
+        cubeFired = Instantiate(spawndCube, spawnPoint.transform.position, Quaternion.identity);      //Instantiate the cubes
+        cubeFired.transform.rotation = transform.rotation;                                            //
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColorGetter : MonoBehaviour
 {
-    BallScript ballScript;
+    ColorScript colorScript;
     public BallsyForce cannonScript;
     public GameObject octopiPrefab;
     public GameObject prefabLoc;
@@ -22,14 +22,14 @@ public class ColorGetter : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "CannonBall")
+        if (other.tag == "Conveyed")
         {
-            ballScript = other.gameObject.GetComponent<BallScript>();
-            cannonScript.colorValue = ballScript.colorValue;
-            Instantiate(octopiPrefab, prefabLoc.transform.position, octopiPrefab.transform.rotation);
-            Destroy(other.gameObject);
+            colorScript = other.gameObject.GetComponent<ColorScript>();                                   //Upon collision with a 
+            cannonScript.colorValue = colorScript.colorValue;                                             //conveyed object, store
+            Instantiate(octopiPrefab, prefabLoc.transform.position, octopiPrefab.transform.rotation);     //colour value and instantiate
+            Destroy(other.gameObject);                                                                    //throwable object in cannon
         }
     }
 }

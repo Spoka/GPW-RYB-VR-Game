@@ -1186,10 +1186,8 @@ GameObject:
   - component: {fileID: 2664783594723953046}
   - component: {fileID: 968579600135712088}
   - component: {fileID: -6528185113286356934}
-  - component: {fileID: 4785466684712762448}
   - component: {fileID: 5789008059161847691}
   - component: {fileID: 4807076485477947358}
-  - component: {fileID: 2804156632046718533}
   m_Layer: 0
   m_Name: OctoConcept
   m_TagString: CannonBall
@@ -1421,19 +1419,6 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!135 &4785466684712762448
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8598363731486097308}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1.3
-  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!65 &5789008059161847691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1458,18 +1443,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 1.08, z: 0}
---- !u!114 &2804156632046718533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8598363731486097308}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751c977cd4efece449623a5c99821b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorValue: 0
+  m_Radius: 2.3
+  m_Center: {x: 0, y: 1.14, z: 0}

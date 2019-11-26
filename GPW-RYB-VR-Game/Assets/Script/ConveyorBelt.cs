@@ -16,6 +16,6 @@ public class ConveyorBelt : MonoBehaviour
 
     void OnTriggerStay(Collider coll)
     {
-        coll.transform.position = Vector3.MoveTowards(coll.transform.position, endPoint.position, speed * Time.deltaTime);
+        coll.transform.position = Vector3.MoveTowards(coll.transform.position, endPoint.position, speed * Time.deltaTime); //Move any object on collider towards end point
     }
 }

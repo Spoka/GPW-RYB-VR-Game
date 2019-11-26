@@ -1546,11 +1546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.78
+      value: 6.225
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.21
+      value: -22.253
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1916,8 +1916,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xForceMin: -60
   xForceMax: 60
-  yForce: 525
-  zForce: -1295
+  yForce: 1350
+  zForce: -1000
+  timeToShoot: 0.5
   colorValue: 0
 --- !u!136 &1483525914
 CapsuleCollider:
@@ -2795,7 +2796,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawndCube
       value: 
-      objectReference: {fileID: 4686241260892212623, guid: 52bf154f4da3afe4fbf23bea0cde17a1,
+      objectReference: {fileID: 4452743659950804432, guid: 2f2ea73eb6474894a904256b4ec9c0ec,
         type: 3}
     - target: {fileID: 1778882362016695836, guid: ceccac68515e7fd489b6648bec158936,
         type: 3}

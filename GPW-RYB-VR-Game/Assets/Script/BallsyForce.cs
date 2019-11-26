@@ -10,22 +10,21 @@ public class BallsyForce : MonoBehaviour
     //ColorScript colorScript;
     //public GameObject ballsyPrefab;
     //public GameObject prefabLoc;
-    public float xForceMin = -300;
-    public float xForceMax = 300;
-    public float yForce = 700;
-    public float zForce = -1500;
+    public float xForceMin = -300;          //
+    public float xForceMax = 300;           //All shoot forces can be set from the editor
+    public float yForce = 700;              //
+    public float zForce = -1500;            //
+    public float timeToShoot = 1;
     public int colorValue;
     bool shoot;
     float timer;
-    
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
     }
-
-    //THIS NEEDS TO BE MOVED TO ANOTHER SCRIPT
+    
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.tag == "Conveyed")
@@ -36,26 +35,25 @@ public class BallsyForce : MonoBehaviour
     //        Destroy(other.gameObject);
     //    }
     //}
-    //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "CannonBall")
-        {
-            //splitter = other.gameObject.GetComponent<Splitter>();
-            rigidBalldy = other.attachedRigidbody;
-            shoot = true;
-          
-            timer += Time.deltaTime;
-            if (timer >= 0.5f)
-            {
-                //splitter.launched = true;
-                float xForce = Random.Range(xForceMin, xForceMax);
-                rigidBalldy.AddForce(new Vector3(xForce, yForce, zForce));
-                rigidBalldy.useGravity = true;
-                timer = 0;
-            }
-        }
+        if (other.tag == "CannonBall")                                             //
+        {                                                                          //
+            //splitter = other.gameObject.GetComponent<Splitter>();                //
+            rigidBalldy = other.attachedRigidbody;                                 //Get rigidbody component from the colliding 
+            shoot = true;                                                          //throwable object
+                                                                                   //
+            timer += Time.deltaTime;                                               //
+            if (timer >= timeToShoot)                                              //After shoot delay, shoot the throwable object
+            {                                                                      //by adding force in given directions set in editor
+                //splitter.launched = true;                                        //
+                float xForce = Random.Range(xForceMin, xForceMax);                 //Y and Z forces are fixed, X is a set range value
+                rigidBalldy.AddForce(new Vector3(xForce, yForce, zForce));         //
+                rigidBalldy.useGravity = true;                                     //Then enable gravity for the throwable object
+                timer = 0;                                                         //
+            }                                                                      //
+        }                                                                          //
     }
     private void OnTriggerExit(Collider other)
     {
