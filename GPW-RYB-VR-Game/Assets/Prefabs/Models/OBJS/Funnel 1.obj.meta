@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebda50335df52e64c8f1483df0f6c398
+guid: fe2ba748bdb57a34392abd55a99f31f2
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pSphere1Mat
-    second: {fileID: 2100000, guid: 8c92eef3a2007d542a154f4647099fb3, type: 2}
+      name: pCylinder1Mat
+    second: {fileID: 2100000, guid: 758b3d1fef84a6042953558ed5316f13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pCylinder2Mat
+    second: {fileID: 2100000, guid: 758b3d1fef84a6042953558ed5316f13, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

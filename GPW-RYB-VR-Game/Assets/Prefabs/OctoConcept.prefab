@@ -1204,7 +1204,7 @@ Transform:
   m_GameObject: {fileID: 8598363731486097308}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.0761397, y: 0.224919, z: 0.4947246}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 5369101540658856251}
   - {fileID: 7591355740082155139}
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
-  scaleReleaseVelocity: 2
+  scaleReleaseVelocity: 1.5
   scaleReleaseVelocityThreshold: -1
   scaleReleaseVelocityCurve:
     serializedVersion: 2
@@ -1443,5 +1443,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.3
+  m_Radius: 5
   m_Center: {x: 0, y: 1.14, z: 0}
