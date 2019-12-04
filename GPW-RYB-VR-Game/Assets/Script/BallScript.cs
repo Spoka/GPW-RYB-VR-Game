@@ -7,52 +7,34 @@ public class BallScript : MonoBehaviour
     public int colorValue;
     BallsyForce cannonScript;
     float timer;
-    
+	Renderer renderer;
+	
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        renderer = gameObject.GetComponent<Renderer>();
+	}
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        timer += Time.deltaTime;    //
-        if (timer >= 10)            //
-        {                           //After 10 seconds since spawn, destroy the object this is attached to
-            Destroy(gameObject);    //
-        }                           //
-    }
+		timer += Time.deltaTime;
+		if (timer >= 10)
+		{
+			renderer.material.SetColor("_Color", Color.black);
+		}
+		if (timer >= 20)
+		{
+			Destroy(gameObject);
+		}
+	}
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "ConveyorBelt")
-    //    {
-    //        var renderer = gameObject.GetComponent<Renderer>();
-    //
-    //        colorValue = Random.Range(1, 4);
-    //
-    //        switch (colorValue)
-    //        {
-    //            case 1:
-    //                renderer.material.SetColor("_Color", Color.red);
-    //                break;
-    //            case 2:
-    //                renderer.material.SetColor("_Color", Color.yellow);
-    //                break;
-    //            case 3:
-    //                renderer.material.SetColor("_Color", Color.blue);
-    //                break;
-    //        }
-    //    }
-    //}
-    private void OnTriggerStay(Collider other)
+	private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Cannon")                                                  //
-        {                                                                           //
-            var renderer = gameObject.GetComponent<Renderer>();                     //Get renderer component from the object this
+        {                                                                           //Get renderer component from the object this
             cannonScript = other.gameObject.GetComponent<BallsyForce>();            //is attached to
             colorValue = cannonScript.colorValue;                                   //
                                                                                     //
@@ -69,5 +51,22 @@ public class BallScript : MonoBehaviour
                     break;                                                          //
             }                                                                       //
         }                                                                           //
+		if (other.tag == "Ground")
+		{
+			timer += Time.deltaTime;   
+			if (timer >= 3)            
+			{                          
+				Destroy(gameObject);   
+			}                          
+		}
+		if (other.tag == "Container")
+		{
+			timer += Time.deltaTime;
+			if (timer >= 10)
+			{
+				Destroy(gameObject);
+				print("aaaaa" + timer);
+			}
+		}
     }
 }

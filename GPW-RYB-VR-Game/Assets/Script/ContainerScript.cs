@@ -10,6 +10,8 @@ public class ContainerScript : MonoBehaviour
     int ground = 4;
     int thisContainer;
 
+	AudioSource scoreSound;
+
     public ScoreScript scoreScript;
     
     BallScript ballScript;
@@ -36,6 +38,7 @@ public class ContainerScript : MonoBehaviour
                 break;                                  //
         }                                               //
         scoreScript.score = 0;
+		scoreSound = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,10 +57,11 @@ public class ContainerScript : MonoBehaviour
             {                                                                   //
                 if (ballScript.colorValue == thisContainer)                     //When a ball/creature/throwable object is thrown into 
                 {                                                               //a container, check the colour values and assign score 
-                    scoreScript.score++;                                        //accordingly; it is done so that is never gets to a 
-                }                                                               //negative value
+                    scoreScript.score++;                                        //accordingly; it is done so that is never gets to a
+					scoreSound.Play();                                          //negative value
+				}                                                               //
                 else if (ballScript.colorValue != thisContainer)                //
-                {                                                               //then destroy the object
+                {                                                               //
                     if (scoreScript.score == 1)                                 //
                     {                                                           //
                         scoreScript.score--;                                    //
@@ -67,7 +71,6 @@ public class ContainerScript : MonoBehaviour
                         scoreScript.score -= 2;                                 //
                     }                                                           //
                 }                                                               //
-                Destroy(other.gameObject);                                      //
             }                                                                   //
         }                                                                       //
     }                                                                           //
