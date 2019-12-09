@@ -17,6 +17,9 @@ public class BallsyForce : MonoBehaviour
     [Range(0f, 1000f)]
     public float zForceRange = 500;
 
+    AudioSource audioSource;
+    public AudioClip[] shootClips;
+    
     public float timeToShoot = 1;
     public int colorValue;
     bool shoot;
@@ -34,19 +37,14 @@ public class BallsyForce : MonoBehaviour
         {                                                                          //
             //splitter = other.gameObject.GetComponent<Splitter>();                //
             rigidBalldy = other.attachedRigidbody;                                 //Get rigidbody component from the colliding 
-            AudioSource shootClip = other.GetComponent<AudioSource>();
+            audioSource = other.GetComponent<AudioSource>();
             shoot = true;                                                          //throwable object
                                                                                    //
             timer += Time.deltaTime;                                               //
             if (timer >= timeToShoot)                                              //After shoot delay, shoot the throwable object
             {                                                                      //by adding force in given directions set in editor
-                //splitter.launched = true;                                        //
-                float xForce = Random.Range(-xForceRange, xForceRange);            //All force directions are ranges
-                float yForce = Random.Range(yForceRange - 20, yForceRange + 20);   //X is a wide range, Y and Z are smaller ranges
-                float zForce = Random.Range(zForceRange - 80, zForceRange + 80);   //
-                rigidBalldy.AddForce(new Vector3(xForce, yForce, -zForce));        //
-                rigidBalldy.useGravity = true;                                     //Then enable gravity for the throwable object
-                shootClip.Play();
+                Shoot();                                                           //and play a random audio clip among the ones set
+                ShootClip();                                                       //in editor
                 timer = 0;                                                         //
             }                                                                      //
         }                                                                          //
@@ -57,6 +55,21 @@ public class BallsyForce : MonoBehaviour
         {
             shoot = false;
         }
+    }
+
+    void Shoot()
+    {
+        float xForce = Random.Range(-xForceRange, xForceRange);
+        float yForce = Random.Range(yForceRange - 20, yForceRange + 20);
+        float zForce = Random.Range(zForceRange - 80, zForceRange + 80);
+        rigidBalldy.AddForce(new Vector3(xForce, yForce, -zForce));
+        rigidBalldy.useGravity = true;
+    }
+
+    void ShootClip()
+    {
+        int i = Random.Range(0, shootClips.Length);
+        audioSource.PlayOneShot(shootClips[i]);
     }
 
     // Update is called once per frame

@@ -11,12 +11,12 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //scoreText = gameObject.GetComponent<Text>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = score.ToString(); //Score UI updated
+        scoreText.text = "Your Score: " + score.ToString(); //Score UI updated
     }
 }
