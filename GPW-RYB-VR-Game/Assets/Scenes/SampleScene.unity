@@ -3175,13 +3175,13 @@ MonoBehaviour:
   shootClips:
   - {fileID: 8300000, guid: 07060b70c5077064ab9397cbb9719939, type: 3}
   - {fileID: 8300000, guid: 918ee1b51fd32d748a66d520586569ba, type: 3}
-  - {fileID: 8300000, guid: d53053a416c413d40ae35d3b3d2c8277, type: 3}
+  - {fileID: 8300000, guid: fdcbdcd5e7d71594bb123666b2bcb779, type: 3}
   - {fileID: 8300000, guid: efee776e88902a74684c56ce2962678f, type: 3}
-  - {fileID: 8300000, guid: adcc31e02dc74204c80c632b9844b681, type: 3}
+  - {fileID: 8300000, guid: 0d1c592fd11196848aa69fc91bca521e, type: 3}
   - {fileID: 8300000, guid: 526033aedfcd8fa4893bd857ca331979, type: 3}
-  - {fileID: 8300000, guid: e3148a98a2496e64cb8712177bbcde71, type: 3}
+  - {fileID: 8300000, guid: 747254780f5d81b40b16acac3b8f9585, type: 3}
   - {fileID: 8300000, guid: 2f800f3498cfcb94a8f6a5f8553d8aef, type: 3}
-  - {fileID: 8300000, guid: eafd8df4914b6054db2b36a3aa4b4830, type: 3}
+  - {fileID: 8300000, guid: 7a1b97ffbdbef1d44aa8aab723f05560, type: 3}
   - {fileID: 8300000, guid: 62bdcbc5f3d6b3f43844cc7b849f0448, type: 3}
   timeToShoot: 0.75
   colorValue: 0
