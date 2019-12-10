@@ -52,7 +52,7 @@ public class ConveyorSpawn : MonoBehaviour
 
         if (currentDelay == 0)                        //
         {                                             //
-            Fire();                                   //
+            Spawn();                                   //
         }                                             //
                                                       //
         if (fireCube && currentDelay < delay)         //Call Fire(spawn) method after Delay time
@@ -66,7 +66,7 @@ public class ConveyorSpawn : MonoBehaviour
         }                                             //
     }
 
-    void Fire()
+    void Spawn()
     {
         fireCube = true;                                                                              //
         cubeFired = Instantiate(spawndCube, spawnPoint.transform.position, Quaternion.identity);      //Instantiate the cubes

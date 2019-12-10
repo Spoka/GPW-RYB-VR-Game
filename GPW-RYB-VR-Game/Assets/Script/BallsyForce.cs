@@ -44,7 +44,7 @@ public class BallsyForce : MonoBehaviour
             if (timer >= timeToShoot)                                              //After shoot delay, shoot the throwable object
             {                                                                      //by adding force in given directions set in editor
                 Shoot();                                                           //and play a random audio clip among the ones set
-                ShootClip();                                                       //in editor
+                                                                                   //in editor
                 timer = 0;                                                         //
             }                                                                      //
         }                                                                          //
@@ -64,17 +64,14 @@ public class BallsyForce : MonoBehaviour
         float zForce = Random.Range(zForceRange - 80, zForceRange + 80);
         rigidBalldy.AddForce(new Vector3(xForce, yForce, -zForce));
         rigidBalldy.useGravity = true;
-    }
-
-    void ShootClip()
-    {
         int i = Random.Range(0, shootClips.Length);
         audioSource.PlayOneShot(shootClips[i]);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
+        //THIS WAS USED TO TEST SHOOTING AND INSTANTIATION PRIOR TO THE ACTUAL CODE 
         /*
         if (Input.GetKeyDown(KeyCode.Space) && shoot)
         {

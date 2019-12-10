@@ -9,8 +9,6 @@ public class BallScript : MonoBehaviour
     float timer;
 	Renderer renderer;
 	
-
-
     // Start is called before the first frame update
     void Start()
     {
