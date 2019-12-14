@@ -23,7 +23,7 @@ public class ConveyorSpawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (timerScript.GameTimer <= 180 && timerScript.GameTimer > 150)
         {
