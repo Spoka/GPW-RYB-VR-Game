@@ -10,7 +10,7 @@ public class GameTimerScript : MonoBehaviour
     public int GameTimer { get { return Mathf.RoundToInt(gameTimer); } }
 
     public Text gameTimerText;
-    public GameObject newGameCanvas;
+    //public GameObject newGameCanvas;
     public GameObject gameLights;
 
     protected bool gameOver;
@@ -31,7 +31,7 @@ public class GameTimerScript : MonoBehaviour
         if (GameTimer <= 0)
         {
             Time.timeScale = 0;
-            newGameCanvas.SetActive(true);
+            //newGameCanvas.SetActive(true);
             gameLights.SetActive(false);
             gameOver = true;
             gameTimer = 180;

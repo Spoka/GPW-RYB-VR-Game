@@ -52,7 +52,7 @@ public class ConveyorSpawn : MonoBehaviour
 
         if (currentDelay == 0)                        //
         {                                             //
-            Spawn();                                   //
+            Spawn();                                  //
         }                                             //
                                                       //
         if (fireCube && currentDelay < delay)         //Call Fire(spawn) method after Delay time

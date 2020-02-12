@@ -11,7 +11,7 @@ public class StartGameScript : GameTimerScript
     {
         Time.timeScale = 0;
         gameOver = true;
-        newGameCanvas = gameObject;
+        //newGameCanvas = gameObject;
     }
 
     public void StartGame()
@@ -20,6 +20,11 @@ public class StartGameScript : GameTimerScript
         scoreScript.score = 0;
         gameLights.SetActive(true);
         Time.timeScale = 1;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+    }
+
+    public void ButtonPressed()
+    {
+        print("button pressed!");
     }
 }
