@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5780974072974578718}
   - component: {fileID: 8689781229772048702}
   - component: {fileID: 5026246436294926585}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ConveyorTestCube
   m_TagString: Conveyed
   m_Icon: {fileID: 0}
